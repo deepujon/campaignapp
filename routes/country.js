@@ -90,7 +90,7 @@ router.get('/:id/states/:code',function(req, res) {
       console.log('findbystatecode');
       console.log(codeparam);
       //db.country.find( { "states.name": "Kerala" },{"states":  { $elemMatch: { name: "Kerala" } } , _id: 0} ).pretty()
-  	  collection.find({'states.code':codeparam},{"states":  { $elemMatch: { code: codeparam } } , _id: 0},function(e,docs){
+  	  collection.find({"states.code":codeparam},{"states":  { $elemMatch: { code: codeparam } } , _id: 0},function(e,docs){
             console.log(docs);
             res.json(docs);
           });
